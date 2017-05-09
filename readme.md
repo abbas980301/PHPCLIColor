@@ -1,11 +1,11 @@
-##Usage
+## Usage
 
 ```PHP
     $text = # Incoming Update: 3" ;
     echo ColorFactory::text($text)->color('magenta') . PHP_EOL;
 ```
 
-##Valid Colors
+## Valid Colors
 
 ```PHP
 array(
