@@ -1,3 +1,5 @@
+## PHPCLIColor
+
 Print colorful text in PHP-CLI
 
 ## Usage
