@@ -1,0 +1,13 @@
+{
+    "name": "shakibonline/php-cli-color",
+    "description": "Simple coloring library for PHP CLI",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Abbas Shakiba",
+            "email": "shakiba_9@yahoo.com"
+        }
+    ],
+    "minimum-stability": "beta",
+    "require": {}
+}
