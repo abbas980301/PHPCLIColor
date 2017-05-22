@@ -1,25 +1,23 @@
 <?php
+
 namespace app\components\color;
 
 /**
- * Class Color
+ * Class Color.
  *
  * Print colored text in cli
  *
  * Note: This class most use in cli!
- *
- * @package app\components
  */
 class Color
 {
-
     /**
-     * Const
+     * Const.
      */
     const ESC_SEQ_PATTERN = "\033[%sm";
 
     // italic and blink may not work depending of your terminal
-    protected $styles = array(
+    protected $styles = [
         'reset'            => '0',
         'bold'             => '1',
         'dark'             => '2',
@@ -66,10 +64,10 @@ class Color
         'bg_light_magenta' => '105',
         'bg_light_cyan'    => '106',
         'bg_white'         => '107',
-    );
+    ];
 
     /**
-     * Given text
+     * Given text.
      *
      * @var string
      */
@@ -77,6 +75,7 @@ class Color
 
     /**
      * Color constructor.
+     *
      * @param string $string
      */
     public function __construct($string = '')
@@ -86,40 +85,49 @@ class Color
 
     /**
      * @param string $string
+     *
      * @return $this
      */
     public function __invoke($string)
     {
         $this->string = $string;
+
         return $this;
     }
 
     /**
      * @param string $style
-     * @return string
+     *
      * @throws \Exception
+     *
+     * @return string
      */
     public function highlight($style)
     {
-        if ($this->isStyleExists($style))
-            return $this->buildEscSeq($this->styles[$style]) . $this->string . $this->buildEscSeq($this->styles['reset']);
+        if ($this->isStyleExists($style)) {
+            return $this->buildEscSeq($this->styles[$style]).$this->string.$this->buildEscSeq($this->styles['reset']);
+        }
+
         return 'Wrong color name';
     }
 
     /**
-     * Check requested style in `$style`
+     * Check requested style in `$style`.
+     *
      * @see Color::$styles
-     * 
+     *
      * @param string $style
+     *
      * @return mixed
      */
     protected function isStyleExists($style)
     {
         return array_key_exists($style, $this->styles);
     }
-    
+
     /**
      * @param string $style
+     *
      * @return mixed
      */
     protected function buildEscSeq($style)
