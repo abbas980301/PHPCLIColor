@@ -2,6 +2,13 @@
 
 Print colorful text in PHP-CLI
 
+## Installation
+
+```
+composer require shakibonline/php-cli-color
+```
+
+
 ## Usage
 
 ```PHP
