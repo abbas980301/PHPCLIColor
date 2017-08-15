@@ -12,7 +12,7 @@ composer require shakibonline/php-cli-color
 ## Usage
 
 ```PHP
-    $text = # Incoming Update: 3" ;
+    $text = "# Incoming Update: 3" ;
     echo ColorFactory::text($text)->color('magenta') . PHP_EOL;
 ```
 
